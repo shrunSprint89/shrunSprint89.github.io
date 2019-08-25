@@ -1,0 +1,64 @@
+# Projects
+
+# CBX
+- project: CBX implementation for IDFC and Societe Generale India banks
+  role: Front-end developer
+  #duration: 2012 &mdash; Present
+  # url: "#"
+  description: <ul class="resume-item-list">
+    <li>The CBX application from Intellect's banking suite offering acts as the front-end web application for back-end applications in suite</li>
+    <li>Customization and extensive bug fixing done for delivery</li>
+    #<li>Major technologies involved - ExtJS framework, J2EE, JSP, IBatis framework, Oracle database.</li>
+  </ul>
+
+# JPMC Portal
+- project: JPMorgan Portal application
+  role: Front-end developer
+  #duration: 2007 &mdash; Present
+  # url: "#"
+  description: <ul class="resume-item-list">
+    <li>The Portal application that complements the bank’s corporate back-end applications by allowing the user to access his banking products and services from one place.</li>
+    <li>Worked on change requests and new features</li>
+    #<li>Major technologies involved - ExtJSP, IBatis framework, Oracle database.</li>
+  </ul>
+
+# ThinkMine
+- project: ThinkMine - final year project
+  role: Developer
+  #duration: 2007 &mdash; Present
+  # url: "#"
+  description: 
+    <ul class="resume-item-list">
+    <li>A decentralized peer to peer search engine based on a hierarchical model of the Chord protocol.</li>
+    <li>Has at its core a networking-model based on the Chord protocol; the application collectively crawls the web along with its connected peers and provides internet search results based on user search patterns.</li>
+    <li>Major technologies involved - Python, CherryPy framework, SQLite, P2P networking</li>
+  </ul>
+
+# wProgIndex
+- project: wProgIndex - Web programming resources index
+  role: Developer
+  #duration: 2007 &mdash; Present
+  # url: "#"
+  description: 
+    <br/>
+    Deployed at- https://wprogindex.herokuapp.com/ 
+    Repository- https://github.com/shrunSprint89/wProgIndex
+    <ul class="resume-item-list">
+    <li>Project in progress.</li>
+    <li>Stack has been assembled, basic framework of the app built (with an Angular SPA as front-end, and Express REST API on the server) from scratch and deployed on Heroku (https://heroku.com/), with Mlab (https://mlab.com/) used for running the database.</li>
+    <li>Project to provide an index of web programming resources, possibly crowdsourced from users themselves, tagged and categorized for navigation and rated based on helpfulness to the user.</li>
+    <li>Major technologies involved - MEAN stack with Angular SPA and Express REST API, Bootstrap to help with CSS styling</li>
+  </ul>
+
+# wProgIndex
+- project: Blog - ChittuChirps.com
+  role: Developer
+  #duration: 2007 &mdash; Present
+  # url: "#"
+  description: 
+    <br/>
+    Deployed at- https://www.chittuchirps.com/ 
+    <ul class="resume-item-list">
+    <li>Personal Wordpress blog, serving as a place to post articles for the author. Custom template created for the styling of the website.</li>
+    <li>Major technologies involved - Wordpress, CSS</li>
+  </ul>

@@ -1,0 +1,64 @@
+# Site settings
+title: "Sharan - personal site and portfolio"
+description: "Personal website and portfolio of Sharan S. Find information about me and contact me if needed"
+
+# Build settings
+markdown: kramdown
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Resume settings
+resume_avatar:                  "true"
+resume_name:                    "Sharan S"
+resume_title:                   "Web developer"
+
+# used for the contact button in _layouts/resume.html
+resume_contact_email:           "sharan.bizid@gmail.com"
+
+# the next two items are used for schema itemprops in _layouts/resume.html
+#resume_contact_telephone:       "7871503503"
+resume_contact_address:         "Chennai, India"
+
+#resume_header_contact_info:     "Chennai, India • 555-7334 • lisasimpson@youremailaddress.com"
+resume_header_contact_info:     "Chennai, India • sharan.bizid@gmail.com"
+display_header_contact_info:    "false"
+
+resume_header_intro: "<p>Software engineer with over 5 years professional experience in web application development (primarily front-end) with a well-known organization. Have experience working with a variety of programming languages and technologies including JavaScript, ExtJS, Java, Python. Getting myself acquainted with the MEAN stack presently. Looking to move forward in career in web programming.</p>"
+
+# use "yes" to display the email contact button,
+# "no" to display an "I'm not looking for work" message,
+# or remove the resume_looking_for_work option entirely
+# to leave blank
+resume_looking_for_work:        "yes"
+
+# Decide which sections to use
+# comment out to hide
+resume_section_experience:      true
+resume_section_education:       true
+resume_section_projects:        true
+resume_section_skills:          true
+resume_section_recognition:     false
+resume_section_links:           false
+resume_section_associations:    false
+# resume_section_interests:       true
+
+# Resume social links
+# uncomment the options you wish to display, and add your own URL
+resume_social_links:
+  resume_github_url:            "https://github.com/shrunSprint89/"
+  resume_twitter_url:           "https://twitter.com/shrunSpeak"
+  #resume_dribbble_url:          "https://dribbble.com/jag"
+  # resume_facebook_url:          "insert Facebook URL here"
+  resume_linkedin_url:          "https://www.linkedin.com/in/sharan-s-webdev/"
+  # resume_instagram_url:         "insert your Instagram URL here"
+  resume_website_url:           "https://shrunSprint89.github.io"
+  #resume_medium_url:            "https://medium.com/@jglovier"
+resume_print_social_links:      true
+
+# Design settings
+resume_theme:                   default
+
+# Note: when editing locally, remember to restart
+# your Jekyll server when you edit this file. Changes
+# to _config.yml are only recognized when the server starts

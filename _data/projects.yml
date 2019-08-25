@@ -27,11 +27,11 @@
   role: Developer
   #duration: 2007 &mdash; Present
   # url: "#"
-  description: <br/>Deployed at- https://wprogindex.herokuapp.com/ <br/>Repository- https://github.com/shrunSprint89/wProgIndex  <ul class="resume-item-list"><li>Project in progress.</li><li>Stack has been assembled, basic framework of the app built (with an Angular SPA as front-end, and Express REST API on the server) from scratch and deployed on Heroku (https://heroku.com/), with Mlab (https://mlab.com/) used for running the database.</li><li>Project to provide an index of web programming resources, possibly crowdsourced from users themselves, tagged and categorized for navigation and rated based on helpfulness to the user.</li><li>Major technologies involved - MEAN stack with Angular SPA and Express REST API, Bootstrap to help with CSS styling</li></ul>
+  description: Deployed at- <a href="https://wprogindex.herokuapp.com/">https://wprogindex.herokuapp.com/</a> <br/>Repository- <a href="https://github.com/shrunSprint89/wProgIndex">https://github.com/shrunSprint89/wProgIndex</a>  <ul class="resume-item-list"><li>Project in progress.</li><li>Stack has been assembled, basic framework of the app built (with an Angular SPA as front-end, and Express REST API on the server) from scratch and deployed on Heroku (<a href="https://heroku.com/">https://heroku.com/</a>), with Mlab (<a href="https://mlab.com/">https://mlab.com/</a>) used for running the database.</li><li>Project to provide an index of web programming resources, possibly crowdsourced from users themselves, tagged and categorized for navigation and rated based on helpfulness to the user.</li><li>Major technologies involved - MEAN stack with Angular SPA and Express REST API, Bootstrap to help with CSS styling</li></ul>
 
 # wProgIndex
 - project: Blog - ChittuChirps.com
   role: Developer
   #duration: 2007 &mdash; Present
   # url: "#"
-  description: <br/>Deployed at- https://www.chittuchirps.com/ <ul class="resume-item-list"><li>Personal Wordpress blog, serving as a place to post articles for the author. Custom template created for the styling of the website.</li><li>Major technologies involved - Wordpress, CSS</li></ul>
+  description: <br/>Deployed at- <a href="https://www.chittuchirps.com/">https://www.chittuchirps.com/</a> <ul class="resume-item-list"><li>Personal Wordpress blog, serving as a place to post articles for the author. Custom template created for the styling of the website.</li><li>Major technologies involved - Wordpress, CSS</li></ul>

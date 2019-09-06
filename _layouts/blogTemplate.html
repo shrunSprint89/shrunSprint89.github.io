@@ -29,54 +29,46 @@
         <div class="title-bar no-print">
 
           <!-- Your title is also defined in the _config.yml file -->
-          <h2 class="header-title" itemprop="jobTitle">{{ site.resume_title }}</h2>
+          <h2 class="header-title" itemprop="jobTitle">
+            <!--{{ site.blog_title }}-->
+            Blog
+          </h2>
 
           <!-- This is the markup for the icon links; moved out to an include because it's very verbose, and you shouldn't ever need to edit the markup (unless you want to re-order the icons); if you want to customize which links appear, define them in the _config.yml file -->
           {% include icon-links.html %}
-        </div>
-
-        <div class="executive-summary" itemprop="description">
-          {{ site.resume_header_intro }}
         </div>
 
         {% include navigation.html %}
 
       </header>
 
+      <!-- begin Post -->
       <section class="content-section">
 
         <header class="section-header">
-          <h2>Experience</h2>
-        </header>
-      </section>
-
-
-      {% if site.resume_section_projects %}
-      <!-- begin Projects -->
-      <section class="content-section">
-        <header class="section-header">
-          <h2>Current projects</h2>
+          <h2>{{ page.title }}</h2>
         </header>
 
-        {% for project in site.data.projects %}
-        <div class="resume-item" itemscope itemtype="http://schema.org/CreativeWork">
-          <meta itemprop="creator" content="{{ site.resume_name }}" itemtype="http://schema.org/Person" />
-          <h3 class="resume-item-title" itemprop="name">{% if project.url %}<a href="{{ project.url }}" itemprop="url">{{ project.project }}</a>{% else %}{{ project.project }}{% endif %}</h3>
-          <h4 class="resume-item-details" itemprop="description">{{ project.role }}  
-              {% if project.duration %}
-              &bull; {{ project.duration }} <!--Only add duration if it is present as a value-->
-              {% endif %}
-          </h4>
-          <p class="resume-item-copy">{{ project.description }}</p>
+        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+          <h4 class="resume-item-details" itemprop="description">{{ page.date | date_to_string }} &bull; {{ page.author }}</h4>
+          <p class="resume-item-copy">
+            {{ content }}
+          </p>
         </div>
-        {% endfor %}
 
       </section>
-      <!-- end Projects -->
-      {% endif %}
+      <!-- end Post -->
 
+      <h1>Latest Posts</h1>
 
-
+      <ul>
+        {% for post in site.posts %}
+          <li>
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <p>{{ post.excerpt }}</p>
+          </li>
+        {% endfor %}
+      </ul>
 
       <footer class="page-footer">
         <p class="footer-line">Site by <a href="http://twitter.com/shrunSpeak">@shrunSpeak</a>. Fork this Jekyll based GitHub page on <a href="https://github.com/shrunSprint89/shrunSprint89.github.io">GitHub</a>.</p>

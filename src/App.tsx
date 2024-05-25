@@ -1,38 +1,19 @@
-import * as React from "react"
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
+import * as React from "react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { GridContainer } from "./components/GridContainer";
+import { BottomContainer } from "./components/BottomContainer";
+import { Header } from "./components/Header";
+import { QuickSummaryBar } from "./components/QuickSummaryBar";
+import { ContentContainer } from "./components/ContentContainer";
+import { theme } from "./themes/VsCode.theme";
 
-export const App = () => (
+export const App = (): React.JSX.Element => (
   <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
-        </VStack>
-      </Grid>
-    </Box>
+      <GridContainer
+        footer={<BottomContainer />}
+        header={<Header />}
+        nav={<QuickSummaryBar />}
+        main={<ContentContainer />}
+      />
   </ChakraProvider>
-)
+);

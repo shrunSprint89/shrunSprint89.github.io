@@ -1,29 +1,40 @@
-import { background, extendTheme } from "@chakra-ui/react"
+import { extendTheme } from "@chakra-ui/react";
 
 export const theme = extendTheme({
-    global: {
+  /* global: {
         body: {
         fontFamily: "body",
         },
+    }, */
+  colors: {
+    blue: {
+      100: "#9CDCFE",
+      200: "#569CD6",
     },
-    colors: {
-        dark: {
-            primary: {
-                backgroundColor: "#1F2228",
-                fontColor: "##C4CBDA",
-                highlightColor1: "#569CD6",
-                highlightColor2: "#4EC9B0"
-            },
-            secondary: {
-                backgroundColor: "#24272E",
-                fontColor: "#C4CBDA",
-                highlightColor1: "#C586C0",
-                highlightColor2: "#9CDCFE"
-            },
-            tertiary: {
-                backgroundColor: "#31343D",
-                highlightColor1: "#CE9178",                    
-            },
-        }
-    }
-})
+    gray: {
+      100: "#C4CBDA",
+      200: "#494e5c",
+      300: "#24272E",
+      400: "#1F2228",
+    },
+    white: {
+      900: "#FFFFFF",
+      500: "#F0F0F0",
+      100: "#D9D9D9",
+    },
+    pink: {
+      100: "#C586C0",
+    },
+    green: {
+      100: "#4EC9B0",
+    },
+    orange: {
+      100: "#CE9178",
+    },
+  },
+  fonts: {
+    body: "Poppins, sans-serif",
+    heading: "Poppins, sans-serif",
+    mono: "Consolas, 'Courier New', monospace",
+  },
+});

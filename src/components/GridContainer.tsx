@@ -20,21 +20,13 @@ export const GridContainer = ({
       gridTemplateColumns={"300px 1fr"}
       h="calc(100vh)"
       gap="0"
-      color="blackAlpha.700"
-      fontWeight="bold"
+      bg="gray.400"
+      color="gray.100"
     >
-      <GridItem pl="2" bg="orange.300" area={"header"}>
-        {header}
-      </GridItem>
-      <GridItem pl="2" bg="pink.300" area={"nav"}>
-        {nav}
-      </GridItem>
-      <GridItem pl="2" bg="green.300" area={"main"}>
-        {main}
-      </GridItem>
-      <GridItem pl="2" bg="blue.300" area={"footer"}>
-        {footer}
-      </GridItem>
+      <GridItem area={"header"}>{header}</GridItem>
+      <GridItem area={"nav"}>{nav}</GridItem>
+      <GridItem area={"main"}>{main}</GridItem>
+      <GridItem area={"footer"}>{footer}</GridItem>
     </Grid>
   );
 };

@@ -1,30 +1,24 @@
-import {  Box, Flex, Menu, MenuButton } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 
-export const Header = (): React.JSX.Element => {
-    return (
-      <Flex flexDirection={"row"}>
-        <Box flex={2}>
-          <Menu orientation="horizontal" >
-            <MenuButton padding={"10px"}>
-              Home
-            </MenuButton >
-            <MenuButton padding={"10px"}>
-            About me
-            </MenuButton>
-            <MenuButton padding={"10px"}>
-            Projects
-            </MenuButton>
-            <MenuButton padding={"10px"}>
-            Blog
-            </MenuButton>
-            <MenuButton padding={"10px"}>
-            Contact me
-            </MenuButton>
-          </Menu>
-        </Box>
-        
-        <ColorModeSwitcher justifySelf="flex-end" />
-      </Flex>
-    );
-  };
+export const Header = ({
+  menu,
+  title,
+}: {
+  menu: React.JSX.Element;
+  title: React.JSX.Element;
+}): React.JSX.Element => {
+  return (
+    <Flex
+      height="full"
+      w="full"
+      bg="gray.300"
+      color="gray.100"
+      flexDirection={"row"}
+    >
+      {menu}
+      {title}
+      <ColorModeSwitcher justifySelf="flex-end" />
+    </Flex>
+  );
+};

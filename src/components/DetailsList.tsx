@@ -1,4 +1,4 @@
-import { Details } from "@interfaces/ContentTypes";
+import { Details } from "../interfaces/ContentTypes";
 import { DetailsTextItem } from "./DetailsTextItem";
 
 export const DetailsList = ({
@@ -35,7 +35,7 @@ export const DetailsList = ({
     "present",
     "current",
   ];
-  const orangeHighlightQuery = ["@", "()"];
+  const orangeHighlightQuery = ["@", "(", ")", "{", "}"];
   const pinkHighlightQuery = [
     "Cisco",
     "PolarisFT",
@@ -47,6 +47,12 @@ export const DetailsList = ({
     "Graduation",
     "Chennai",
     "Bangalore",
+    "LinkedIn",
+    "X/Twitter",
+    "Strava",
+    "Date of Birth",
+    "Languages known",
+    "Sports enthusiast",
   ];
   return (
     <>

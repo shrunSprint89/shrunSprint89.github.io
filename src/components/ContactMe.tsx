@@ -1,6 +1,7 @@
-import { Box, Flex, OrderedList } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { QuickSummaryBar } from "./QuickSummaryBar";
 import { DetailedContent } from "./DetailedContent";
+import { ContentList } from "./ContentList";
 
 export const ContactMe = (): React.JSX.Element => {
   return (
@@ -9,17 +10,12 @@ export const ContactMe = (): React.JSX.Element => {
         <QuickSummaryBar showProfileImage={true} />
       </Box>
       <Box flex={3} height="100%" width="100%" overflow={"auto"}>
-        <OrderedList
-          styleType="decimal"
-          color="gray.200"
-          height={"fit-content"}
-          width={"100%"}
-        >
+        <ContentList>
           <DetailedContent
             titleLabel="contactMe.title"
             detailsLabel="contactMe.details"
           />
-        </OrderedList>
+        </ContentList>
       </Box>
     </Flex>
   );

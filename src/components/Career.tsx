@@ -1,7 +1,8 @@
-import { Box, Flex, OrderedList } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { QuickSummaryBar } from "./QuickSummaryBar";
 import { CareerNav } from "../navigation/CareerNav";
 import { Outlet } from "react-router-dom";
+import { ContentList } from "./ContentList";
 
 export const Career = (): React.JSX.Element => {
   return (
@@ -10,14 +11,9 @@ export const Career = (): React.JSX.Element => {
         <QuickSummaryBar nav={<CareerNav />} />
       </Box>
       <Box flex={3} height="100%" width="100%" overflow={"auto"}>
-        <OrderedList
-          styleType="decimal"
-          color="gray.200"
-          height={"fit-content"}
-          width={"100%"}
-        >
+        <ContentList>
           <Outlet></Outlet>
-        </OrderedList>
+        </ContentList>
       </Box>
     </Flex>
   );

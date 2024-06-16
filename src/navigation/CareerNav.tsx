@@ -1,5 +1,6 @@
 import { ListItem, UnorderedList } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { Page } from "../interfaces/RouteTypes";
 
 export const CareerNav = (): React.JSX.Element => {
   return (
@@ -8,7 +9,7 @@ export const CareerNav = (): React.JSX.Element => {
         <Link to="">Career</Link>
       </ListItem>
       <ListItem>
-        <Link to="projects">Projects</Link>
+        <Link to={Page.PROJECTS}>Projects</Link>
       </ListItem>
     </UnorderedList>
   );

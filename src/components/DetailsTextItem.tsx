@@ -11,7 +11,7 @@ export const DetailsTextItem = ({
   [key: string]: any;
 }): React.JSX.Element => {
   return (
-    <ListItem key={listItemKey}>
+    <ListItem pl={1} key={listItemKey}>
       <TextWithHighlights {...props}>{children}</TextWithHighlights>
     </ListItem>
   );

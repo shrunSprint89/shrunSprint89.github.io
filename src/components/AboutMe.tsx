@@ -1,26 +1,21 @@
-import { Box, Flex, OrderedList } from "@chakra-ui/react";
-import { QuickSummaryBar } from "./QuickSummaryBar";
-import { AboutNav } from "../navigation/AboutNav";
+import { Box, Flex } from "@chakra-ui/react";
 import { DetailedContent } from "./DetailedContent";
+import UserCard from "./UserCard";
+import { ContentList } from "./ContentList";
 
 export const AboutMe = (): React.JSX.Element => {
   return (
     <Flex direction={"row"} p={0} height="100%">
-      <Box flexWrap={"nowrap"} flex={1} height="100%" width="100%">
-        <QuickSummaryBar nav={<AboutNav />} />
+      <Box flexWrap={"nowrap"} p={0} flex={1} height="100%" width="100%">
+        <UserCard />
       </Box>
       <Box flex={3} height="100%" width="100%" overflow={"auto"}>
-        <OrderedList
-          styleType="decimal"
-          color="gray.200"
-          height={"fit-content"}
-          width={"100%"}
-        >
+        <ContentList>
           <DetailedContent
             titleLabel="aboutMe.title"
             detailsLabel="aboutMe.details"
           />
-        </OrderedList>
+        </ContentList>
       </Box>
     </Flex>
   );

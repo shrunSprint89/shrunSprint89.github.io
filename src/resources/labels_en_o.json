@@ -66,6 +66,9 @@
   },
   "aboutMe": {
     "title": "@about.me()",
+    "name": "Sharan Selvaraj",
+    "shortbio": "Software engineer, Full stack, but front-end focussed - worked on multiple Frontend frameworks including Angular, Backbone, ExtJS and React.",
+    "otherdescription": "Sports enthusiast, regularly run and cycle, and enjoy Badminton, Tennis, and have a year of training in MMA.",
     "details": [
       {
         "title": "Date of Birth",

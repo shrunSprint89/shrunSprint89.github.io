@@ -2,8 +2,8 @@ import { ListItem } from "@chakra-ui/react";
 import { TextWithHighlights } from "./TextWithHighlights";
 import { useContext } from "react";
 import { LabelContext } from "../contexts/LabelContext";
-import { Details } from "@interfaces/ContentTypes";
 import { DetailsList } from "./DetailsList";
+import { Details } from "../interfaces/ContentTypes";
 
 export const DetailedContent = ({
   titleLabel,
@@ -14,16 +14,16 @@ export const DetailedContent = ({
 }): React.JSX.Element => {
   const labels = useContext(LabelContext);
   const detailedContent: Details[] = labels.getDetails(detailsLabel);
-  const professionalExperienceTitle: string = labels.getLabel(titleLabel);
+  const titleLabelText: string = labels.getLabel(titleLabel);
   return (
     <>
-      <ListItem pb={"5"} key="professionalExperienceTitle">
+      <ListItem pl={1} pb={"5"} key="professionalExperienceTitle">
         <TextWithHighlights
           orangeHighlightQuery={["@", "()"]}
           fontSize="19"
           color="white.500"
         >
-          {professionalExperienceTitle}
+          {titleLabelText}
         </TextWithHighlights>
       </ListItem>
       <DetailsList details={detailedContent} />

@@ -80,5 +80,22 @@
         "description": "Trained with a well-known MMA club at Chennai, Also an avid cyclist and runner, Tennis and Badminton player. Played for school and college field hockey teams and participated in Tennis state level tournaments at school. Hoping I can run a few marathons in my life"
       }
     ]
+  },
+  "contactMe": {
+    "title": "@contact.me()",
+    "details": [
+      {
+        "title": "LinkedIn",
+        "description": "https://www.linkedin.com/in/sharanselvaraj/"
+      },
+      {
+        "title": "X/Twitter",
+        "description": "https://x.com/shrunSpeak"
+      },
+      {
+        "title": "Strava",
+        "description": "https://www.strava.com/athletes/sharan_selvaraj"
+      }
+    ]
   }
 }

@@ -1,13 +1,26 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 
 export const QuickSummaryBar = ({
   nav,
+  showProfileImage,
 }: {
-  nav: React.JSX.Element;
+  nav?: React.JSX.Element;
+  showProfileImage?: boolean;
 }): React.JSX.Element => {
   return (
-    <Box height={"full"} width={"full"} p={4} bg="gray.300" color="gray.100">
-      {nav}
-    </Box>
+    <>
+      {nav && (
+        <Box
+          height={"full"}
+          width={"full"}
+          p={4}
+          bg="gray.300"
+          color="gray.100"
+        >
+          {nav}
+        </Box>
+      )}
+      {showProfileImage && <Image />}
+    </>
   );
 };

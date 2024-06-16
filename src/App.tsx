@@ -13,6 +13,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Career } from "./components/Career";
 import { DetailedContent } from "./components/DetailedContent";
 import { AboutMe } from "./components/AboutMe";
+import { ContactMe } from "./components/ContactMe";
 
 export const App = (): React.JSX.Element => (
   <ChakraProvider theme={theme}>
@@ -49,6 +50,7 @@ export const App = (): React.JSX.Element => (
                 }
               />
             </Route>
+            <Route path="/contact" element={<ContactMe />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

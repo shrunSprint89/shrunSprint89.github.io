@@ -7,12 +7,6 @@ export const AboutNav = (): React.JSX.Element => {
       <ListItem>
         <Link to="">Personal details</Link>
       </ListItem>
-      <ListItem>
-        <Link to="projects">Sports</Link>
-      </ListItem>
-      <ListItem>
-        <Link to="hobbies">Hobbies</Link>
-      </ListItem>
     </UnorderedList>
   );
 };

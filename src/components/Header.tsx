@@ -1,5 +1,4 @@
 import { Flex } from "@chakra-ui/react";
-import { ColorModeSwitcher } from "../ColorModeSwitcher";
 
 export const Header = ({
   menu,
@@ -18,7 +17,6 @@ export const Header = ({
     >
       {menu}
       {title}
-      <ColorModeSwitcher justifySelf="flex-end" />
     </Flex>
   );
 };

@@ -16,15 +16,17 @@ export const DetailedContent = ({
   const detailedContent: Details[] = labels.getDetails(detailsLabel);
   const professionalExperienceTitle: string = labels.getLabel(titleLabel);
   return (
-    <ListItem pb={"5"} key="professionalExperienceTitle">
-      <TextWithHighlights
-        orangeHighlightQuery={["@", "()"]}
-        fontSize="19"
-        color="white.500"
-      >
-        {professionalExperienceTitle}
-      </TextWithHighlights>
+    <>
+      <ListItem pb={"5"} key="professionalExperienceTitle">
+        <TextWithHighlights
+          orangeHighlightQuery={["@", "()"]}
+          fontSize="19"
+          color="white.500"
+        >
+          {professionalExperienceTitle}
+        </TextWithHighlights>
+      </ListItem>
       <DetailsList details={detailedContent} />
-    </ListItem>
+    </>
   );
 };

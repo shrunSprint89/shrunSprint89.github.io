@@ -5,27 +5,52 @@ import { Terminal } from "xterm";
 import { FitAddon } from "xterm-addon-fit";
 import "xterm/css/xterm.css";
 import { Page } from "../interfaces/RouteTypes";
+import { AICompletions } from "../utils/OpenAIClient";
+import "../css/Terminal.css";
 
 export const TerminalContainer = (): React.JSX.Element => {
   let terminalCmd = "";
   const terminalRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const lineBreak = /(\r\n|\r|\n)/;
-  const XTERM_INTRO = "\x1B[1;3;31mxterm\x1B[0m $ ";
+  const XTERM_INTRO = "\x1B[1;3;31m$\x1B[0m ";
   const XTERM_HELP =
-    "Enter a page to navigate to: home, career, projects or contact";
+    "Use the AI bot for talk to the web application (powered by OpenAI APIs)";
+  const completions = new AICompletions();
+  let term: Terminal;
 
-  const onDataHandler = (e: string, term: Terminal) => {
+  const interpretCmd = (cmd: string) => {
+    switch (cmd) {
+      case "clear":
+      case "reset":
+        resetTerm();
+        break;
+      default:
+        getFunctionCallFromAI(cmd);
+        resetTerm();
+    }
+  };
+  const getFunctionCallFromAI = (input: string) => {
+    completions.getFunctionCallFromServer(input).then((result) => {
+      if (result.functionResponse) {
+        const { path } = JSON.parse(result.functionResponse.arguments);
+        navigateToPage(path);
+      } else if (result.textResponse) {
+        term.writeln(result.textResponse);
+      }
+    });
+  };
+  const onDataHandler = (e: string) => {
     if (lineBreak.test(e)) {
       console.log("linebreak. Command: " + terminalCmd);
-      navigateToPage(term);
+      interpretCmd(terminalCmd);
     } else {
       term.write(e);
       terminalCmd = terminalCmd.concat(e);
     }
   };
-  const navigateToPage = (term: Terminal) => {
-    switch (terminalCmd) {
+  const navigateToPage = (path: string) => {
+    switch (path) {
       case "home":
         navigate(Page.HOME);
         break;
@@ -42,34 +67,29 @@ export const TerminalContainer = (): React.JSX.Element => {
         console.log("Incorrect command");
         term.writeln("\n\x1B[1;3;31mIncorrect command\x1B[0m");
     }
+  };
+  const resetTerm = () => {
     terminalCmd = "";
-    resetTerm(term);
-  };
-  const resetTerm = (term: Terminal) => {
     term.reset();
-    term.writeln(XTERM_INTRO);
-    printHelp(term);
-  };
-  const printHelp = (term: Terminal) => {
     term.writeln(XTERM_HELP);
+    term.write(XTERM_INTRO);
   };
 
   useEffect(() => {
     if (terminalRef.current) {
-      const term = new Terminal({
+      term = new Terminal({
         cursorBlink: true,
       });
       const fitAddon = new FitAddon();
       term.open(terminalRef.current);
       fitAddon.fit();
-      term.writeln(XTERM_INTRO);
-      printHelp(term);
-      term.onData((e) => onDataHandler(e, term));
+      resetTerm();
+      term.onData((e) => onDataHandler(e));
       return () => {
         term.dispose();
       };
     }
-  }, []);
+  });
   return (
     <Box
       ref={terminalRef}

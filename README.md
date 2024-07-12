@@ -1,7 +1,20 @@
+A demo project with portfolio of projects and work experience, showcasing React / Typescript, Express / NodeJS and OpenAI function calling skills. 
+
+React app with Typescript. Uses XTerm and calls Express / NodeJS backend server (hosted at https://github.com/shrunSprint89/shrunSprint89ApiServer), which inturn calls an OpenAI chat completions API, using the openai client (https://www.npmjs.com/package/openai) and navigates the application using function calling tool provided by ChatGPT 3.5 Turbo (https://platform.openai.com/docs/guides/function-calling).
+
+Hosted on Github pages @ https://shrunsprint89.github.io/
+
+**GIF of application:**
+![Kapture 2024-07-12 at 16 01 20](https://github.com/user-attachments/assets/6c2db1b7-f48d-4701-bd6b-deb73d032af3)
+
+**API calls being made for getting Function information from ChatGPT:**
+![image](https://github.com/user-attachments/assets/4377b439-4844-40f3-8b3e-5e711cf67c29)
+
+
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
 
-Also uses [Chakra UI](https://v2.chakra-ui.com/) for UI components.
+Uses [Chakra UI](https://v2.chakra-ui.com/) for UI components.
 
 Design inspired by [Koll's Diamond - VSCode Inspired Code Editor Design](https://www.figma.com/community/file/1247868281929098053/diamond-vscode-inspired-code-editor-design)
 

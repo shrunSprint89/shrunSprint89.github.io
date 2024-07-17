@@ -1,15 +1,15 @@
 import { Box, Flex } from "@chakra-ui/react";
-import { QuickSummaryBar } from "./QuickSummaryBar";
-import { CareerNav } from "../navigation/CareerNav";
+//import { QuickSummaryBar } from "./QuickSummaryBar";
+//import { CareerNav } from "../navigation/CareerNav";
 import { Outlet } from "react-router-dom";
 import { ContentList } from "./ContentList";
 
 export const Career = (): React.JSX.Element => {
   return (
     <Flex direction={"row"} p={0} height="100%" fontFamily={"mono"}>
-      <Box flexWrap={"nowrap"} flex={1} height="100%" width="100%">
-        <QuickSummaryBar nav={<CareerNav />} />
-      </Box>
+      {/* 
+      //TODO - Add a c word cloud here
+      */}
       <Box
         p={5}
         pr={7}

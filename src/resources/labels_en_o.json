@@ -7,13 +7,13 @@
         "title": "Cisco, Bangalore",
         "role": "Software engineer (Grade 008)",
         "duration": "January 2023 - present",
-        "description": "Worked extensively on Control Hub, Partner Hub portals (admin.cisco.com) and a little on Cisco Contact Center solutions. Added multiple new features, did code review and redesign and improvements of existing UI components. Technologies that were involved here - Angular, Cypress, AngularJS, Typescript, Jest, Java, (HTML/CSS), Momentum UI"
+        "description": "Worked extensively on Control Hub, Partner Hub portals (https://admin.webex.com) and a little on Cisco Contact Center solutions. Added multiple new features, did code review and redesign and improvements of existing UI components. Technologies that were involved here - Angular, Cypress, AngularJS, Typescript, Jest, Java, (HTML/CSS), Momentum UI"
       },
       {
         "title": "Cisco, Chennai",
         "role": "Software engineer (Grade 008)",
         "duration": "January 2020 - present",
-        "description": "Worked extensively on Control Hub and User Settings portals (admin.cisco.com, settings.cisco.com). Worked extensively on the Frontend applications that are part of the Rialto stack - CAP and CUP. Code review, redesign, improvements of existing UI components. Technologies that were involved here - BackboneJS, Vanilla JS based components, Angular, Cypress, Material design."
+        "description": "Worked extensively on Control Hub and User Settings portals (https://admin.webex.com, https://settings.webex.com). Worked extensively on the Frontend applications that are part of the Rialto stack - CAP and CUP. Code review, redesign, improvements of existing UI components. Technologies that were involved here - BackboneJS, Vanilla JS based components, Angular, Cypress, Material design."
       },
       {
         "title": "TalentFil, Chennai",
@@ -25,7 +25,7 @@
         "title": "Intellect Design Arena Ltd, Chennai",
         "role": "Team lead, IDFC iGTB implementation program / Consultant, Societe Generale India iGTB implementation program",
         "duration": "September 2014 - December 2016",
-        "description": "Played role of front-end developer in the iGTB banking suite implementation for the IDFC bank (http://www.idfc.com/) and also for the Societe Generale India bank (https://www.societegenerale.asia/en/). Role included developing and implementing customizations for the CBX application (customer facing front-end application), which is part of the iGTB suite provided by Intellect. Development work primarily in JavaScript (custom framework based on the ExtJS framework) and Java, Oracle database, iBatis framework."
+        "description": "Played role of front-end developer in the iGTB banking suite implementation for the IDFC bank (https://www.idfc.com/) and also for the Societe Generale India bank (https://www.societegenerale.asia/en/). Role included developing and implementing customizations for the CBX application (customer facing front-end application), which is part of the iGTB suite provided by Intellect. Development work primarily in JavaScript (custom framework based on the ExtJS framework) and Java, Oracle database, iBatis framework."
       },
       {
         "title": "PolarisFT, Chennai",

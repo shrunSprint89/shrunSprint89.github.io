@@ -9,7 +9,14 @@ export const AboutMe = (): React.JSX.Element => {
       <Box flexWrap={"nowrap"} p={0} flex={1} height="100%" width="100%">
         <UserCard />
       </Box>
-      <Box flex={3} p={5} height="100%" width="100%" overflow={"auto"}>
+      <Box
+        flex={3}
+        p={5}
+        height="100%"
+        width="100%"
+        overflowY={"auto"}
+        overflowX={"hidden"}
+      >
         <ContentList>
           <DetailedContent
             titleLabel="aboutMe.title"

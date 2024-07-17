@@ -1,10 +1,11 @@
-import { Text, useHighlight } from "@chakra-ui/react";
+import { Link, Text, useHighlight } from "@chakra-ui/react";
 
 export const TextWithHighlights = ({
   children,
   greenHighlightQuery,
   orangeHighlightQuery,
   pinkHighlightQuery,
+  links,
   indent,
   fontSize,
   lineHeight,
@@ -14,6 +15,7 @@ export const TextWithHighlights = ({
   greenHighlightQuery?: string[];
   orangeHighlightQuery?: string[];
   pinkHighlightQuery?: string[];
+  links?: string[];
   indent?: number;
   fontSize?: string;
   lineHeight?: number;
@@ -25,11 +27,12 @@ export const TextWithHighlights = ({
     orangeHighlightQuery?.map((query) => query.toLowerCase()) ?? [];
   pinkHighlightQuery =
     pinkHighlightQuery?.map((query) => query.toLowerCase()) ?? [];
+  links = links?.map((query) => query.toLowerCase()) ?? [];
   const textContent = "".concat(children as string);
   const chunks = useHighlight({
     text: textContent,
     query: greenHighlightQuery.concat(
-      orangeHighlightQuery.concat(pinkHighlightQuery)
+      orangeHighlightQuery.concat(pinkHighlightQuery).concat(links)
     ),
   });
 
@@ -50,6 +53,7 @@ export const TextWithHighlights = ({
           text.toLowerCase()
         );
         const pinkHighlight = pinkHighlightQuery?.includes(text.toLowerCase());
+        const linksToHighlight = links?.includes(text.toLowerCase());
         if (greenHighlight) {
           finalText = (
             <Text as="span" color="green.100">
@@ -69,6 +73,13 @@ export const TextWithHighlights = ({
             <Text as="span" color="pink.100">
               {text}
             </Text>
+          );
+        }
+        if (linksToHighlight) {
+          finalText = (
+            <Link href={text} color="blue.100" target="_blank">
+              {text}
+            </Link>
           );
         }
         return finalText;

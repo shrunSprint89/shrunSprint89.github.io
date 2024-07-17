@@ -1,59 +1,16 @@
 import { Details } from "../interfaces/ContentTypes";
 import { DetailsTextItem } from "./DetailsTextItem";
+import highlights from "../resources/hightlights.json";
 
 export const DetailsList = ({
   details,
 }: {
   details: Details[];
 }): React.JSX.Element => {
-  const greenHighlightQuery = [
-    "2011",
-    "2012",
-    "2013",
-    "2014",
-    "2015",
-    "2016",
-    "2017",
-    "2018",
-    "2019",
-    "2020",
-    "2021",
-    "2022",
-    "2023",
-    "january",
-    "february",
-    "march",
-    "april",
-    "may",
-    "june",
-    "july",
-    "august",
-    "september",
-    "october",
-    "november",
-    "december",
-    "present",
-    "current",
-  ];
-  const orangeHighlightQuery = ["@", "(", ")", "{", "}"];
-  const pinkHighlightQuery = [
-    "Cisco",
-    "PolarisFT",
-    "Intellect Design Arena Ltd",
-    "Rialto",
-    "JPMC",
-    "JPMorgan",
-    "TalentFil",
-    "Graduation",
-    "Chennai",
-    "Bangalore",
-    "LinkedIn",
-    "X/Twitter",
-    "Strava",
-    "Date of Birth",
-    "Languages known",
-    "Sports enthusiast",
-  ];
+  const greenHighlightQuery = highlights.greenHighlights;
+  const orangeHighlightQuery = highlights.orangeHighlights;
+  const pinkHighlightQuery = highlights.pinkHighlights;
+  const links = highlights.links;
   return (
     <>
       {details.map((detail, index) => (
@@ -63,6 +20,7 @@ export const DetailsList = ({
             orangeHighlightQuery={orangeHighlightQuery}
             greenHighlightQuery={greenHighlightQuery}
             pinkHighlightQuery={pinkHighlightQuery}
+            links={links}
             fontSize={"l"}
             lineHeight={2}
           >
@@ -74,6 +32,7 @@ export const DetailsList = ({
               orangeHighlightQuery={orangeHighlightQuery}
               greenHighlightQuery={greenHighlightQuery}
               pinkHighlightQuery={pinkHighlightQuery}
+              links={links}
               indent={2}
               fontSize={"m"}
               lineHeight={1.5}
@@ -87,6 +46,7 @@ export const DetailsList = ({
               orangeHighlightQuery={orangeHighlightQuery}
               greenHighlightQuery={greenHighlightQuery}
               pinkHighlightQuery={pinkHighlightQuery}
+              links={links}
               indent={5}
               fontSize={"m"}
               lineHeight={1.5}
@@ -100,6 +60,7 @@ export const DetailsList = ({
               orangeHighlightQuery={orangeHighlightQuery}
               greenHighlightQuery={greenHighlightQuery}
               pinkHighlightQuery={pinkHighlightQuery}
+              links={links}
               indent={10}
               lineHeight={1.4}
             >

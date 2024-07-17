@@ -5,11 +5,11 @@ import { ContentList } from "./ContentList";
 
 export const AboutMe = (): React.JSX.Element => {
   return (
-    <Flex direction={"row"} p={0} height="100%">
+    <Flex direction={"row"} p={0} height="100%" fontFamily={"mono"}>
       <Box flexWrap={"nowrap"} p={0} flex={1} height="100%" width="100%">
         <UserCard />
       </Box>
-      <Box flex={3} height="100%" width="100%" overflow={"auto"}>
+      <Box flex={3} p={5} height="100%" width="100%" overflow={"auto"}>
         <ContentList>
           <DetailedContent
             titleLabel="aboutMe.title"

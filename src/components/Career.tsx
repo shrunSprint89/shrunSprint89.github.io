@@ -6,11 +6,19 @@ import { ContentList } from "./ContentList";
 
 export const Career = (): React.JSX.Element => {
   return (
-    <Flex direction={"row"} p={0} height="100%">
+    <Flex direction={"row"} p={0} height="100%" fontFamily={"mono"}>
       <Box flexWrap={"nowrap"} flex={1} height="100%" width="100%">
         <QuickSummaryBar nav={<CareerNav />} />
       </Box>
-      <Box flex={3} height="100%" width="100%" overflow={"auto"}>
+      <Box
+        p={5}
+        pr={7}
+        flex={3}
+        height="100%"
+        width="100%"
+        overflowY={"auto"}
+        overflowX={"hidden"}
+      >
         <ContentList>
           <Outlet></Outlet>
         </ContentList>

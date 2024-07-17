@@ -40,7 +40,7 @@ const UserCard = () => {
     {}
   );
   return (
-    <Box bg="gray.300" color="gray.100" height={"full"} width={"full"}>
+    <Box p={5} bg="gray.300" color="gray.100" height={"full"} width={"full"}>
       <Stack
         w="17rem"
         spacing={2}

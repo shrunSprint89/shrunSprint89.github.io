@@ -1,4 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
+import "@fontsource-variable/jetbrains-mono";
+import "@fontsource/poppins";
 
 export const theme = extendTheme({
   /* global: {
@@ -35,6 +37,6 @@ export const theme = extendTheme({
   fonts: {
     body: "Poppins, sans-serif",
     heading: "Poppins, sans-serif",
-    mono: "Consolas, 'Courier New', monospace",
+    mono: "'JetBrains Mono Variable', monospace",
   },
 });

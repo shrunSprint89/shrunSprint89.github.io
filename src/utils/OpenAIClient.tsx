@@ -1,8 +1,13 @@
 import { AIResponse } from "../interfaces/ContentTypes";
 
 export class AICompletions {
-  private url =
-    "https://shrunsprint89apiserver-production.up.railway.app/openai";
+  get url(): string {
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+      return "http://localhost:3003/openai";
+    } else {
+      return "https://shrunsprint89apiserver-production.up.railway.app/openai";
+    }
+  }
 
   public async getFunctionCallFromServer(input: String): Promise<AIResponse> {
     const body = JSON.stringify({

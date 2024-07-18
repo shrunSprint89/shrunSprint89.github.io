@@ -1,6 +1,4 @@
 import { Box, Flex } from "@chakra-ui/react";
-//import { QuickSummaryBar } from "./QuickSummaryBar";
-//import { CareerNav } from "../navigation/CareerNav";
 import { Outlet } from "react-router-dom";
 import { ContentList } from "./ContentList";
 

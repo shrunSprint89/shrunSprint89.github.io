@@ -8,11 +8,16 @@ export interface Details {
 export interface AIResponse {
   textResponse?: string;
   functionResponse?: {
-    name: string;
+    name: FunctionName;
     arguments: string;
   };
 }
 
 export interface AIRequest {
   message: string;
+}
+
+export enum FunctionName {
+  NAVIGATE = "navigateTo",
+  GETASCIIQUOTE = "getAsciiQuote",
 }

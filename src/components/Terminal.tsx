@@ -7,15 +7,16 @@ import "xterm/css/xterm.css";
 import { Page } from "../interfaces/RouteTypes";
 import { AICompletions } from "../utils/OpenAIClient";
 import "../css/Terminal.css";
+import { FunctionName } from "../interfaces/ContentTypes";
+import { getAsciiQuote } from "../utils/TextUtil";
 
 export const TerminalContainer = (): React.JSX.Element => {
   let terminalCmd = "";
   const terminalRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const lineBreak = /(\r\n|\r|\n)/;
-  const XTERM_INTRO = "\x1B[1;3;31m$\x1B[0m ";
-  const XTERM_HELP =
-    "Use the AI bot for talk to the web application (powered by OpenAI APIs)";
+  const XTERM_INTRO = "\x1B[1;3;31mxterm>\x1B[0m ";
+  const XTERM_HELP = "Function calling chat powered by OpenAI";
   const completions = new AICompletions();
   let term: Terminal;
 
@@ -30,49 +31,69 @@ export const TerminalContainer = (): React.JSX.Element => {
         resetTerm();
     }
   };
+
   const getFunctionCallFromAI = (input: string) => {
     completions.getFunctionCallFromServer(input).then((result) => {
       if (result.functionResponse) {
-        const { path } = JSON.parse(result.functionResponse.arguments);
-        navigateToPage(path);
+        switch (result.functionResponse.name) {
+          case FunctionName.NAVIGATE:
+            const { path } = JSON.parse(result.functionResponse.arguments);
+            navigateTo(path);
+            break;
+          case FunctionName.GETASCIIQUOTE:
+            printQuote();
+            break;
+          default:
+            navigateTo("home");
+        }
       } else if (result.textResponse) {
         term.writeln(result.textResponse);
       }
     });
   };
+
   const onDataHandler = (e: string) => {
     if (lineBreak.test(e)) {
-      console.log("linebreak. Command: " + terminalCmd);
       interpretCmd(terminalCmd);
     } else {
       term.write(e);
       terminalCmd = terminalCmd.concat(e);
     }
   };
-  const navigateToPage = (path: string) => {
+
+  const navigateTo = (path: string) => {
     switch (path) {
-      case "home":
+      case "HOME":
         navigate(Page.HOME);
         break;
-      case "career":
+      case "ABOUT":
+        navigate(Page.ABOUT);
+        break;
+      case "CAREER":
         navigate(Page.CAREER);
         break;
-      case "contact":
+      case "CONTACT":
         navigate(Page.CONTACT);
         break;
-      case "projects":
+      case "PROJECTS":
         navigate(Page.CAREER.concat("/").concat(Page.PROJECTS));
         break;
       default:
-        console.log("Incorrect command");
+        resetTerm();
         term.writeln("\n\x1B[1;3;31mIncorrect command\x1B[0m");
     }
   };
+
   const resetTerm = () => {
     terminalCmd = "";
     term.reset();
     term.writeln(XTERM_HELP);
     term.write(XTERM_INTRO);
+  };
+  const printQuote = () => {
+    const quote = getAsciiQuote();
+    resetTerm();
+    term.writeln(`\n${quote}`);
   };
 
   useEffect(() => {
@@ -84,12 +105,14 @@ export const TerminalContainer = (): React.JSX.Element => {
       term.open(terminalRef.current);
       fitAddon.fit();
       resetTerm();
+      term.focus();
       term.onData((e) => onDataHandler(e));
       return () => {
         term.dispose();
       };
     }
   });
+
   return (
     <Box
       ref={terminalRef}

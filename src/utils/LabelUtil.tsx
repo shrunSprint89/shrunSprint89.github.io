@@ -1,9 +1,9 @@
 import { flatten } from "flat";
-import labels_en_o from "../resources/labels_en_o.json";
+import labels_en from "../resources/labels_en.json";
 import { Details } from "../interfaces/ContentTypes";
 export class LabelUtil {
   private readonly labels_en: { [key: string]: string | Details[] } = flatten(
-    labels_en_o,
+    labels_en,
     {
       safe: true,
     }

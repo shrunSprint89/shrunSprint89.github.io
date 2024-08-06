@@ -22,7 +22,7 @@ export const FlexContainer = ({
       <Box flex={9} overflow={"hidden"}>
         <Outlet />
       </Box>
-      <Box flex={3} overflow={"clip"}>
+      <Box flex={4} overflow={"scroll"}>
         {footer}
       </Box>
     </Flex>

@@ -114,10 +114,6 @@ export const TerminalContainer = (): React.JSX.Element => {
   });
 
   return (
-    <Box
-      ref={terminalRef}
-      style={{ height: "100%", width: "100%" }}
-      overflowY="scroll"
-    ></Box>
+    <Box ref={terminalRef} style={{ height: "100%", width: "100%" }}></Box>
   );
 };

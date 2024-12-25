@@ -7,7 +7,7 @@ import "xterm/css/xterm.css";
 import { Page } from "../interfaces/RouteTypes";
 import { AICompletions } from "../utils/OpenAIClient";
 import "../css/Terminal.css";
-import { FunctionName } from "../interfaces/ContentTypes";
+import { AIResponse, FunctionName } from "../interfaces/ContentTypes";
 import { getAsciiQuote } from "../utils/TextUtil";
 
 export const TerminalContainer = (): React.JSX.Element => {
@@ -40,8 +40,14 @@ export const TerminalContainer = (): React.JSX.Element => {
     }
   };
 
+  const makeChatCompletionsRequest = (input: string): Promise<AIResponse> => {
+    return completions
+      .getFunctionCallFromServer(input)
+      .then((result) => result);
+  };
+
   const getFunctionCallFromAI = (input: string, term: Terminal) => {
-    completions.getFunctionCallFromServer(input).then((result) => {
+    makeChatCompletionsRequest(input).then((result) => {
       if (result.functionResponse) {
         switch (result.functionResponse.name) {
           case FunctionName.NAVIGATE:
@@ -55,7 +61,9 @@ export const TerminalContainer = (): React.JSX.Element => {
             navigateTo("home", term);
         }
       } else if (result.textResponse) {
+        term.writeln("");
         term.writeln(result.textResponse);
+        term.write(XTERM_INTRO);
       }
     });
   };
@@ -79,7 +87,8 @@ export const TerminalContainer = (): React.JSX.Element => {
         break;
       default:
         resetTerm(term);
-        term.writeln("\n\x1B[1;3;31mIncorrect command\x1B[0m");
+        term.writeln("\r\n\x1B[1;3;31mIncorrect command\x1B[0m\r\n");
+        term.write(XTERM_INTRO);
     }
   };
 
@@ -89,10 +98,22 @@ export const TerminalContainer = (): React.JSX.Element => {
     term.writeln(XTERM_HELP);
     term.write(XTERM_INTRO);
   };
+
   const printQuote = (term: Terminal) => {
     const quote = getAsciiQuote();
     resetTerm(term);
-    term.writeln(`\n${quote}`);
+    term.writeln(`\r\n${quote}`);
+  };
+
+  const printIntroductionResponse = (term: Terminal) => {
+    makeChatCompletionsRequest("Hello, How can I use this terminal").then(
+      (result) => {
+        if (result.textResponse) {
+          term.writeln(`${result.textResponse}\r\n`);
+          term.write(XTERM_INTRO);
+        }
+      }
+    );
   };
 
   useEffect(() => {
@@ -102,9 +123,11 @@ export const TerminalContainer = (): React.JSX.Element => {
       });
       const fitAddon = new FitAddon();
       term.open(terminalRef.current);
+      term.loadAddon(fitAddon);
       fitAddon.fit();
       resetTerm(term);
       term.focus();
+      printIntroductionResponse(term);
       term.onData((e) => onDataHandler(e, term));
       return () => {
         term.dispose();

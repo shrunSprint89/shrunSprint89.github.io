@@ -25,14 +25,14 @@ export const TextWithHighlights = ({
     greenHighlightQuery?.map((query) => query.toLowerCase()) ?? [];
   orangeHighlightQuery =
     orangeHighlightQuery?.map((query) => query.toLowerCase()) ?? [];
-  pinkHighlightQuery =
+  const pinkHighlightQueryCaseCorrected =
     pinkHighlightQuery?.map((query) => query.toLowerCase()) ?? [];
   links = links?.map((query) => query.toLowerCase()) ?? [];
   const textContent = "".concat(children as string);
   const chunks = useHighlight({
     text: textContent,
     query: greenHighlightQuery.concat(
-      orangeHighlightQuery.concat(pinkHighlightQuery).concat(links)
+      orangeHighlightQuery.concat(pinkHighlightQueryCaseCorrected).concat(links)
     ),
   });
 
@@ -52,7 +52,7 @@ export const TextWithHighlights = ({
         const orangeHighlight = orangeHighlightQuery?.includes(
           text.toLowerCase()
         );
-        const pinkHighlight = pinkHighlightQuery?.includes(text.toLowerCase());
+        const pinkHighlight = pinkHighlightQuery?.includes(text);
         const linksToHighlight = links?.includes(text.toLowerCase());
         if (greenHighlight) {
           finalText = (

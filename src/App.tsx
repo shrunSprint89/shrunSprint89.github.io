@@ -3,8 +3,6 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { BottomContainer } from "./components/BottomContainer";
 import { Header } from "./components/Header";
 import { theme } from "./themes/VsCode.theme";
-import { TopMenu } from "./components/TopMenu";
-import { TitleBar } from "./components/TitleBar";
 import { LabelContext } from "./contexts/LabelContext";
 import { LabelUtil } from "./utils/LabelUtil";
 import { FlexContainer } from "./components/FlexContainer";
@@ -15,6 +13,7 @@ import { DetailedContent } from "./components/DetailedContent";
 import { AboutMe } from "./components/AboutMe";
 import { ContactMe } from "./components/ContactMe";
 import { Page } from "./interfaces/RouteTypes";
+import { MainNav } from "./navigation/MainNav";
 
 export const App = (): React.JSX.Element => (
   <ChakraProvider theme={theme}>
@@ -25,7 +24,7 @@ export const App = (): React.JSX.Element => (
             path={Page.HOME}
             element={
               <FlexContainer
-                header={<Header menu={<TopMenu />} title={<TitleBar />} />}
+                header={<Header menu={<MainNav />} />}
                 footer={<BottomContainer />}
               />
             }

@@ -6,7 +6,15 @@ import { ContentList } from "./ContentList";
 export const AboutMe = (): React.JSX.Element => {
   return (
     <Flex direction={"row"} p={0} height="100%" fontFamily={"mono"}>
-      <Box flexWrap={"nowrap"} p={0} flex={1} height="100%" width="100%">
+      <Box
+        flexWrap={"nowrap"}
+        p={0}
+        flex={1}
+        height="100%"
+        width="100%"
+        borderRight={"1.5px solid"}
+        borderRightColor={"gray.200"}
+      >
         <UserCard />
       </Box>
       <Box

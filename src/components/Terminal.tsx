@@ -15,36 +15,44 @@ export const TerminalContainer = (): React.JSX.Element => {
   const terminalRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const lineBreak = /(\r\n|\r|\n)/;
-  const XTERM_INTRO = "\x1B[1;3;31mxterm>\x1B[0m ";
-  const XTERM_HELP = "Function calling chat powered by OpenAI";
+  const XTERM_INTRO = "\x1B[1;3;31mguest@shrunsprint.github.io>\x1B[0m ";
+  const XTERM_HELP = "Interactive Terminal\r\n" + "-".repeat(20) + "\r\n";
   const completions = new AICompletions();
-  let term: Terminal;
 
-  const interpretCmd = (cmd: string) => {
-    switch (cmd) {
-      case "clear":
-      case "reset":
-        resetTerm();
-        break;
-      default:
-        getFunctionCallFromAI(cmd);
-        resetTerm();
+  const onDataHandler = (e: string, term: Terminal) => {
+    if (lineBreak.test(e)) {
+      interpretCmd(terminalCmd, term);
+    } else {
+      term.write(e);
+      terminalCmd = terminalCmd.concat(e);
     }
   };
 
-  const getFunctionCallFromAI = (input: string) => {
+  const interpretCmd = (cmd: string, term: Terminal) => {
+    switch (cmd) {
+      case "clear":
+      case "reset":
+        resetTerm(term);
+        break;
+      default:
+        getFunctionCallFromAI(cmd, term);
+        resetTerm(term);
+    }
+  };
+
+  const getFunctionCallFromAI = (input: string, term: Terminal) => {
     completions.getFunctionCallFromServer(input).then((result) => {
       if (result.functionResponse) {
         switch (result.functionResponse.name) {
           case FunctionName.NAVIGATE:
             const { path } = JSON.parse(result.functionResponse.arguments);
-            navigateTo(path);
+            navigateTo(path, term);
             break;
           case FunctionName.GETASCIIQUOTE:
-            printQuote();
+            printQuote(term);
             break;
           default:
-            navigateTo("home");
+            navigateTo("home", term);
         }
       } else if (result.textResponse) {
         term.writeln(result.textResponse);
@@ -52,16 +60,7 @@ export const TerminalContainer = (): React.JSX.Element => {
     });
   };
 
-  const onDataHandler = (e: string) => {
-    if (lineBreak.test(e)) {
-      interpretCmd(terminalCmd);
-    } else {
-      term.write(e);
-      terminalCmd = terminalCmd.concat(e);
-    }
-  };
-
-  const navigateTo = (path: string) => {
+  const navigateTo = (path: string, term: Terminal) => {
     switch (path) {
       case "HOME":
         navigate(Page.HOME);
@@ -79,34 +78,34 @@ export const TerminalContainer = (): React.JSX.Element => {
         navigate(Page.CAREER.concat("/").concat(Page.PROJECTS));
         break;
       default:
-        resetTerm();
+        resetTerm(term);
         term.writeln("\n\x1B[1;3;31mIncorrect command\x1B[0m");
     }
   };
 
-  const resetTerm = () => {
+  const resetTerm = (term: Terminal) => {
     terminalCmd = "";
     term.reset();
     term.writeln(XTERM_HELP);
     term.write(XTERM_INTRO);
   };
-  const printQuote = () => {
+  const printQuote = (term: Terminal) => {
     const quote = getAsciiQuote();
-    resetTerm();
+    resetTerm(term);
     term.writeln(`\n${quote}`);
   };
 
   useEffect(() => {
     if (terminalRef.current) {
-      term = new Terminal({
+      const term = new Terminal({
         cursorBlink: true,
       });
       const fitAddon = new FitAddon();
       term.open(terminalRef.current);
       fitAddon.fit();
-      resetTerm();
+      resetTerm(term);
       term.focus();
-      term.onData((e) => onDataHandler(e));
+      term.onData((e) => onDataHandler(e, term));
       return () => {
         term.dispose();
       };

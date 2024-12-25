@@ -16,7 +16,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
-import { AiFillGithub } from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin, AiOutlineX } from "react-icons/ai";
 import { LabelContext } from "../contexts/LabelContext";
 import { useContext } from "react";
 
@@ -42,53 +42,55 @@ const UserCard = () => {
   return (
     <Box p={5} bg="gray.300" color="gray.100" height={"full"} width={"full"}>
       <Stack
-        w="17rem"
+        w="90%"
+        minW="22rem"
         spacing={2}
         p={4}
         border="1px solid"
         borderColor={useColorModeValue("gray.400", "gray.600")}
         rounded="md"
         margin="0 auto"
-        _hover={{
-          boxShadow: useColorModeValue(
-            "0 4px 6px rgba(160, 174, 192, 0.6)",
-            "0 4px 6px rgba(9, 17, 28, 0.4)"
-          ),
-        }}
+        boxShadow={"0 0 5px 1px rgba(0, 0, 0, 0.2)"}
       >
-        <HStack justifyContent="space-between" alignItems="baseline">
-          <Tooltip
-            label="Lahore, Pakistan"
-            aria-label="Lahore, Pakistan"
-            placement="right-end"
-            size="sm"
-            // Sizes for Tooltip are not implemented in the default theme. You can extend the theme to implement them
-          >
-            <Box pos="relative">
-              <Avatar
-                src="https://avatars.githubusercontent.com/u/50130010?v=4"
-                name={labels.name}
-                size="xl"
-                borderRadius="md"
-              />
+        <Box pos="relative">
+          <Avatar
+            src="https://avatars.githubusercontent.com/u/50130010?v=4"
+            name={labels.name}
+            size="full"
+            borderRadius="md"
+          />
+        </Box>
+
+        <HStack justifyContent="space-between" alignItems="normal">
+          <chakra.h1 fontSize="xl" fontWeight="bold">
+            {labels.name}
+          </chakra.h1>
+          <HStack justifyContent="space-between" alignItems="normal">
+            <Link isExternal href="https://github.com/shrunSprint89">
+              <Icon as={AiFillGithub} w={6} h={6} />
+            </Link>
+            <Link isExternal href="https://www.linkedin.com/in/sharanselvaraj/">
+              <Icon as={AiFillLinkedin} w={6} h={6} />
+            </Link>
+            <Link isExternal href="https://x.com/shrunSpeak">
+              <Icon as={AiOutlineX} w={6} h={6} />
+            </Link>
+            <Tooltip
+              label="Coimbatore, India"
+              aria-label="Coimbatore, India"
+              placement="right-end"
+              size="sm"
+              // Sizes for Tooltip are not implemented in the default theme. You can extend the theme to implement them
+            >
               <Avatar
                 src="https://flagcdn.com/in.svg"
                 name="Indian Flag"
                 size="xs"
                 borderRadius="full"
-                pos="absolute"
-                bottom={0}
-                right="-12px"
               />
-            </Box>
-          </Tooltip>
-          <Link isExternal href="https://github.com/shrunSprint89">
-            <Icon as={AiFillGithub} w={6} h={6} />
-          </Link>
+            </Tooltip>
+          </HStack>
         </HStack>
-        <chakra.h1 fontSize="xl" fontWeight="bold">
-          {labels.name}
-        </chakra.h1>
         <Text fontSize="md" color="gray.500">
           {labels.shortbio}
         </Text>

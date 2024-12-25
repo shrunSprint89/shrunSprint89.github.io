@@ -1,5 +1,4 @@
 import { Box, Flex } from "@chakra-ui/react";
-import { QuickSummaryBar } from "./QuickSummaryBar";
 import { DetailedContent } from "./DetailedContent";
 import { ContentList } from "./ContentList";
 

@@ -1,22 +1,23 @@
-import { Flex } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 
 export const Header = ({
   menu,
   title,
 }: {
   menu: React.JSX.Element;
-  title: React.JSX.Element;
+  title?: React.JSX.Element;
 }): React.JSX.Element => {
   return (
-    <Flex
+    <HStack
       height="full"
       w="full"
       bg="gray.300"
       color="gray.100"
-      flexDirection={"row"}
+      align={"center"}
+      justify={"flex-start"}
     >
       {menu}
-      {title}
-    </Flex>
+      {title && title}
+    </HStack>
   );
 };

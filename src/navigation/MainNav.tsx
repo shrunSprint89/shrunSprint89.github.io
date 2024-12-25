@@ -9,12 +9,13 @@ import {
 import { NavLink } from "react-router-dom";
 import { Page } from "../interfaces/RouteTypes";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import { MainNavItem } from "./MainNavItem";
 
 export const MainNav = (): React.JSX.Element => {
   const careerLink = Page.HOME.concat(Page.CAREER);
   const projectLink = careerLink.concat("/", Page.PROJECTS);
   return (
-    <HStack>
+    <HStack paddingLeft={"2rem"}>
       <Box padding={"10px"}>
         <NavLink to={Page.HOME}>About me</NavLink>
       </Box>
@@ -29,12 +30,15 @@ export const MainNav = (): React.JSX.Element => {
           >
             Career & Projects <ChevronDownIcon />
           </MenuButton>
-          <MenuList bg={"gray.300"}>
+          <MenuList
+            bg={"gray.300"}
+            boxShadow={"2px 2px 4px 2px rgba(0, 0, 0, 0.6)"}
+          >
             <MenuItem bg={"gray.300"} _hover={{ bg: "gray.200" }}>
-              <NavLink to={careerLink}>Career</NavLink>
+              <MainNavItem text="Career" link={careerLink} />
             </MenuItem>
             <MenuItem bg={"gray.300"} _hover={{ bg: "gray.200" }}>
-              <NavLink to={projectLink}>Projects</NavLink>
+              <MainNavItem text="Projects" link={projectLink} />
             </MenuItem>
           </MenuList>
         </Menu>

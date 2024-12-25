@@ -16,13 +16,25 @@ export const FlexContainer = ({
       color="gray.100"
       direction={"column"}
     >
-      <Box flex={1} overflow={"clip"}>
+      <Box
+        flex={1}
+        overflow={"clip"}
+        zIndex="docked"
+        borderBottom={"1.5px solid"}
+        borderBottomColor={"gray.200"}
+        boxShadow={"0 0 4px 3px rgba(22, 22, 22, 0.8)"}
+      >
         {header}
       </Box>
-      <Box flex={9} overflow={"hidden"}>
+      <Box flex={20} overflow={"hidden"}>
         <Outlet />
       </Box>
-      <Box flex={4} overflow={"scroll"}>
+      <Box
+        flex={9}
+        overflow={"scroll"}
+        borderTop={"1.5px solid"}
+        borderTopColor={"gray.200"}
+      >
         {footer}
       </Box>
     </Flex>

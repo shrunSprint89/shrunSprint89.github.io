@@ -71,12 +71,12 @@
   "aboutMe": {
     "title": "@about.me()",
     "name": "Sharan Selvaraj",
-    "shortbio": "Software engineer, Full stack, but front-end focussed - worked on multiple Frontend frameworks including Angular, React,Backbone, ExtJS. Some experience with AI APIs/Models like ChatGPT, Mistral etc",
-    "otherdescription": "I'm also a runner and cyclist, and enjoy Badminton, Tennis, and a little bit of MMA.",
+    "shortbio": "A versatile full stack engineer specializing in frontend engineering. My technical portfolio spans end-to-end application development, integrating modern frontend technologies with Java or Node based backend frameworks and exploring emerging AI technologies through APIs like ChatGPT and Mistral.",
+    "otherdescription": "When I'm not coding or designing interfaces, you'll find me pushing physical limits through endurance running and cycling or strategizing on badminton and tennis courts",
     "details": [
       {
         "title": "Skills",
-        "description": "Frontend frameworks - Angular, React, BackBone.js. HTML/CSS, PHP, Node, Java, Python, Git, SQL, TensorFlow (a little, getting better) etc"
+        "description": "Frontend frameworks - Angular, React, BackBone.js and ofcourse HTML/CSS, Backend stacks include PHP based CMS stacks, NodeJS, Java based stacks, Python. Worked with NoSql DBs like MongoDB (still a learner) and SQL DBs. Well-versed with CI/CD, Git etc. Starting out with TensorFlow and other ML frameworks"
       },
       {
         "title": "Experience",
@@ -88,7 +88,7 @@
       },
       {
         "title": "Languages known",
-        "description": "Proficient in English, Tamil"
+        "description": "Proficient in English, Tamil and can engage a little in Malayalam"
       }
     ]
   },

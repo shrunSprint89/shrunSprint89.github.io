@@ -12,13 +12,19 @@ import {
   Icon,
   Avatar,
   Tooltip,
-  Divider,
   useColorModeValue,
+  IconButton,
 } from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
 import { AiFillGithub, AiFillLinkedin, AiOutlineX } from "react-icons/ai";
 import { LabelContext } from "../contexts/LabelContext";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
+import {
+  ShowMore,
+  ShowMoreRef,
+  ShowMoreToggleLinesFn,
+} from "@re-dev/react-truncate";
+import { BiCollapseVertical, BiExpandVertical } from "react-icons/bi";
 
 const UserCard = () => {
   const keys = {
@@ -39,8 +45,12 @@ const UserCard = () => {
     },
     {}
   );
+  const ref = useRef<ShowMoreRef>(null);
+  const toggleLines: ShowMoreToggleLinesFn = (e) => {
+    ref.current?.toggleLines(e);
+  };
   return (
-    <Box p={5} bg="gray.300" color="gray.100" height={"full"} width={"full"}>
+    <Box p={5} color="gray.100" width={"full"}>
       <Stack
         w="90%"
         minW="22rem"
@@ -91,12 +101,45 @@ const UserCard = () => {
             </Tooltip>
           </HStack>
         </HStack>
-        <Text fontSize="md" color="gray.500">
-          {labels.shortbio}
-        </Text>
-        <Divider />
-        <Text fontSize="md" color="gray.500">
-          {labels.otherdescription}
+        <Text color="gray.500">
+          <ShowMore
+            ref={ref}
+            lines={8}
+            more={
+              <span>
+                ...
+                <IconButton
+                  aria-label={"Expand button"}
+                  bgColor={"gray.300"}
+                  color={"gray.500"}
+                  float={"right"}
+                  height={"25px"}
+                  icon={<BiExpandVertical />}
+                  marginLeft={"1rem"}
+                  onClick={toggleLines}
+                  width={"10px"}
+                />
+              </span>
+            }
+            less={
+              <IconButton
+                aria-label={"Collapse button"}
+                bgColor={"gray.300"}
+                color={"gray.500"}
+                float={"right"}
+                height={"25px"}
+                icon={<BiCollapseVertical />}
+                marginLeft={"1rem"}
+                onClick={toggleLines}
+                width={"10px"}
+              />
+            }
+          >
+            <Text textIndent="2rem">{labels.shortbio}</Text>
+            <Text textIndent="2rem" marginTop={"1rem"}>
+              {labels.otherdescription}
+            </Text>
+          </ShowMore>
         </Text>
       </Stack>
     </Box>

@@ -3,11 +3,6 @@ import "@fontsource-variable/jetbrains-mono";
 import "@fontsource/poppins";
 
 export const theme = extendTheme({
-  /* global: {
-        body: {
-        fontFamily: "body",
-        },
-    }, */
   colors: {
     blue: {
       100: "#9CDCFE",

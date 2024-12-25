@@ -15,6 +15,7 @@ export const FlexContainer = ({
       bg="gray.400"
       color="gray.100"
       direction={"column"}
+      fontSize={"medium"}
     >
       <Box
         flex={1}
@@ -26,7 +27,7 @@ export const FlexContainer = ({
       >
         {header}
       </Box>
-      <Box flex={20} overflow={"hidden"}>
+      <Box flex={25} overflow={"hidden"}>
         <Outlet />
       </Box>
       <Box

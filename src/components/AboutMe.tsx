@@ -14,6 +14,9 @@ export const AboutMe = (): React.JSX.Element => {
         width="100%"
         borderRight={"1.5px solid"}
         borderRightColor={"gray.200"}
+        overflowY={"auto"}
+        overflowX={"hidden"}
+        bg="gray.300"
       >
         <UserCard />
       </Box>

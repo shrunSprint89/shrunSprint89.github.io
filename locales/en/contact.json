@@ -1,0 +1,13 @@
+{
+  "form": {
+    "successMessage": "Your message has been sent to me. I will get in touch soon. Thank you!",
+    "errorMessage": "There was an error. Please try again in a while.",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "subjectLabel": "Subject",
+    "messageLabel": "Message",
+    "submitLabel": "Submit",
+    "reactOutSocialsLabel": "Reach Out Via Socials",
+    "fillOutFormLabel": "Or Fill Out This Form"
+  }
+}

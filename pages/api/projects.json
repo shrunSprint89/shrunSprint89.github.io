@@ -1,37 +1,70 @@
 [
   {
     "id": 1,
-    "name": "Driwwwle",
-    "image": "https://imgur.com/kbGs6zH.png",
-    "description": "A platform for web developers to showcase their projects",
-    "tags": ["next", "node", "mongodb", "tailwind", "react-query"],
-    "source_code": "https://github.com/itsnitinr/driwwwle-v2",
-    "demo": "https://driwwwle.com/"
+    "name": "PartnerHub",
+    "image": "logos/Cisco_Webex_logo.svg",
+    "tags": ["angular", "monorepo", "microfrontend"],
+    "demo": "https://admin.webex.com/"
   },
   {
     "id": 2,
-    "name": "PCB Cupid",
-    "image": "https://imgur.com/tAZotn3.png",
-    "description": "E-commerce website for a PCB manufacturing company",
-    "tags": ["react", "node", "mongodb", "redux", "razorpay", "material-ui"],
-    "demo": "https://www.pcbcupid.com/"
+    "name": "ControlHub",
+    "image": "logos/Cisco_Webex_logo.svg",
+    "tags": ["angular", "monorepo", "microfrontend"],
+    "demo": "https://admin.webex.com/"
   },
   {
     "id": 3,
-    "name": "HealthyWays",
-    "image": "https://imgur.com/8FFqaX8.png",
-    "description": "A food ordering platform for healthy and home-cooked meals",
-    "tags": ["react", "node", "mongodb", "redux", "razorpay", "material-ui"],
-    "source_code": "https://github.com/itsnitinr/healthyways",
-    "demo": "https://healthyways.herokuapp.com/"
+    "name": "RialtoStack",
+    "image": "logos/Cisco_Webex_logo.svg",
+    "tags": [
+      "angular",
+      "angularmaterial",
+      "backbonejs",
+      "microfrontend",
+      "vanillajs",
+      "java",
+      "microservice"
+    ],
+    "source_code": "NA",
+    "demo": "https://settings.webex.com/"
+  },
+  {
+    "id": 3,
+    "name": "WxDocubot",
+    "image": "/logos/WxDocubot.png",
+    "tags": ["webex", "chatbot", "llm", "machine-learning", "nodejs"],
+    "source_code": "https://github.com/shrunSprint89/WxDocubot",
+    "demo": "NA"
   },
   {
     "id": 4,
-    "name": "VSCode Portfolio",
-    "image": "https://imgur.com/mKkz0iz.png",
-    "description": "A themeable and developer-centric portfolio based on the VSCode",
-    "tags": ["next", "css-modules"],
-    "source_code": "https://github.com/itsnitinr/vscode-portfolio",
-    "demo": "http://vscode-portfolio.vercel.app/"
+    "name": "IntellectCBX",
+    "image": "/logos/IGtbLogo.jpg",
+    "tags": ["java", "j2ee", "extjs", "javascript", "oracle"],
+    "source_code": "NA",
+    "demo": "https://admin.webex.com/"
+  },
+  {
+    "id": 5,
+    "name": "JPMCPortal",
+    "image": "/logos/JpMorgan.png",
+    "tags": ["java", "j2ee", "extjs", "javascript", "oracle"],
+    "source_code": "NA",
+    "demo": "https://admin.webex.com/"
+  },
+  {
+    "id": 6,
+    "name": "ThinkMine",
+    "image": "/logos/Chord_network.png",
+    "tags": [
+      "python",
+      "cherrypy",
+      "chord",
+      "peer-to-peer",
+      "distributed-systems"
+    ],
+    "source_code": "NA",
+    "demo": "https://admin.webex.com/"
   }
 ]

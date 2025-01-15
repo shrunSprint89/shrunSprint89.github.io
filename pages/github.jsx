@@ -1,15 +1,12 @@
-import Image from 'next/image';
-import GitHubCalendar from 'react-github-calendar';
-import RepoCard from '../components/RepoCard';
-import styles from '../styles/GithubPage.module.css';
+import Image from "next/image";
+import GitHubCalendar from "react-github-calendar";
+import RepoCard from "../components/RepoCard";
+import styles from "../styles/GithubPage.module.css";
 
 const GithubPage = ({ repos, user }) => {
+  console.log(JSON.stringify(repos));
   const theme = {
-    level0: '#161B22',
-    level1: '#0e4429',
-    level2: '#006d32',
-    level3: '#26a641',
-    level4: '#39d353',
+    light: ["#161B22", "#0e4429", "#006d32", "#26a641", "#39d353"],
   };
 
   return (
@@ -33,9 +30,18 @@ const GithubPage = ({ repos, user }) => {
         </div>
       </div>
       <div className={styles.container}>
-        {repos.map((repo) => (
-          <RepoCard key={repo.id} repo={repo} />
-        ))}
+        {repos
+          .sort((repo1, repo2) => {
+            if (new Date(repo1.pushed_at) > new Date(repo2.pushed_at)) {
+              return -1;
+            } else if (new Date(repo1.pushed_at) < new Date(repo2.pushed_at)) {
+              return 1;
+            }
+            return 0;
+          })
+          .map((repo) => (
+            <RepoCard key={repo.id} repo={repo} />
+          ))}
       </div>
       <div className={styles.contributions}>
         <GitHubCalendar
@@ -74,7 +80,7 @@ export async function getStaticProps() {
     .slice(0, 6);
 
   return {
-    props: { title: 'GitHub', repos, user },
+    props: { title: "GitHub", repos, user },
     revalidate: 10,
   };
 }

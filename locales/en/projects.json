@@ -1,0 +1,47 @@
+{
+  "descriptionLabel": "Stuff I've worked on so far",
+  "demoLabel": "Demo/Link",
+  "sourceCodeLabel": "Source Code",
+  "listOfProjects": [
+    {
+      "name": "PartnerHub",
+      "title": "Cisco - Webex Partner Hub",
+      "description": "Partner Hub is Cisco's portal for Partners to login and manage creation of new customers, and manage existing customers, add new administrators, control domains etc."
+    },
+    {
+      "name": "ControlHub",
+      "title": "Cisco - Webex Control Hub",
+      "description": "Control Hub (admin.webex.com) is the main administration portal for any customer using Cisco's Webex suite. The customer logs in and does everything from adding new users, setting phone numbers, add new calling features and checking analytics in this one core portal."
+    },
+    {
+      "name": "RialtoStack",
+      "title": "Cisco - Rialto stack UI applications",
+      "description": "Worked extensively on the UI applications that are part of the Rialto stack of application at Cisco Chennai. Analyzed, and helped improve JS UI components like Select2 library. Worked on improvements and issues in the Angular-based CUP portal and Backbone based CAP portal."
+    },
+    {
+      "name": "WxDocubot",
+      "title": "Cisco - Rialto stack UI applications",
+      "description": ""
+    },
+    {
+      "name": "IntellectCBX",
+      "title": "Intellect design - CBX implementation for IDFC and Societe Generale India banks",
+      "description": "The CBX application from Intellect acts as the front-end web application for back-end applications like the Payments and Collections and allows the bank's customer to access the banking suite. CBX is rendered extensively using a custom framework built over ExtJS JavaScript library and uses various Java technologies."
+    },
+    {
+      "name": "JPMCPortal",
+      "title": "Polaris - JPMorgan Portal application",
+      "description": "The Portal application that complements the bank's corporate back-end applications by allowing the user to access his investments, manage liquidity etc. from one place. The web based front-end of the application is rendered extensively using the JavaScript library called ExtJS, over which a custom framework has been built, and uses various Java technologies."
+    },
+    {
+      "name": "ThinkMine",
+      "title": "Keystone project for Bachelor's - ThinkMine, a CHORD protocol based Peer to peer search engine",
+      "description": "A decentralized peer to peer search engine based on a hierarchical model of the Chord protocol. Has at its core a networking-model based on the Chord protocol."
+    },
+    {
+      "name": "Portfolio",
+      "title": "shrunsprint89.github.io",
+      "description": "A demo project with portfolio of projects and work experience, showcasing React / Typescript, Express / NodeJS and OpenAI function calling skills. Uses XTerm and calls Express / NodeJS backend server (https://github.com/shrunSprint89/shrunSprint89ApiServer), which in-turn calls an OpenAI chat completions API, using the Openai client (https://www.npmjs.com/package/openai) and navigates the application using function calling tool provided by ChatGPT 3.5 Turbo (https://platform.openai.com/docs/guides/function-calling). Repo - https://github.com/shrunSprint89/shrunSprint89.github.io"
+    }
+  ]
+}

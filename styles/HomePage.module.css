@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
 
 .container {
   display: flex;
@@ -9,9 +9,9 @@
 }
 
 .background {
-  font-size: 5rem;
-  font-family: 'Montserrat';
-  line-height: 1.1;
+  font-size: 3.5rem;
+  font-family: "Montserrat";
+  line-height: 2;
   color: var(--bg-text);
   position: absolute;
   z-index: 1;
@@ -43,7 +43,7 @@
 
 .bio::before,
 .bio::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -108,24 +108,11 @@
 
 /* 4K Screens */
 @media screen and (min-width: 2000px) {
-  .background {
-    font-size: 8.5rem;
-  }
   .content {
     padding: 0 3rem;
   }
-  .name {
-    font-size: 6rem;
-  }
   .bio {
-    font-size: 3rem;
     margin-bottom: 5rem;
-  }
-  .button {
-    font-size: 2rem;
-  }
-  .outlined {
-    font-size: 2rem;
   }
   .illustration {
     height: 900px;

@@ -1,4 +1,5 @@
 # vscode-portfolio
+
 [![Open is Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/itsnitinr/vscode-portfolio)
 
 A Visual Studio Code themed developer portfolio website built with Next.js and deployed on Vercel.
@@ -16,6 +17,10 @@ A Visual Studio Code themed developer portfolio website built with Next.js and d
 - [ ] Interactive custom terminal
 
 For other features and themes suggestions, please open an issue.
+
+## Translation labels
+
+Uses [next-translate](https://github.com/aralroca/next-translate), an Easy i18n for Next.js +10, for adding translated labels. Use [component].[element].[state] for organizing the label keys in the JSON files, which are in-turn organized by locale and Page/Route within /locales folder
 
 ## Environment Variables
 

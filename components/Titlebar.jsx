@@ -1,7 +1,11 @@
-import Image from 'next/image';
-import styles from '../styles/Titlebar.module.css';
+import Image from "next/image";
+import styles from "../styles/Titlebar.module.css";
+import useTranslation from "next-translate/useTranslation";
 
 const Titlebar = () => {
+  const { t } = useTranslation("common");
+  const myName = t("my-name");
+
   return (
     <section className={styles.titlebar}>
       <Image
@@ -20,7 +24,7 @@ const Titlebar = () => {
         <p>Terminal</p>
         <p>Help</p>
       </div>
-      <p className={styles.title}>Nitin Ranganath - Visual Studio Code</p>
+      <p className={styles.title}>{myName} - Visual Studio Code</p>
       <div className={styles.windowButtons}>
         <span className={styles.minimize}></span>
         <span className={styles.maximize}></span>

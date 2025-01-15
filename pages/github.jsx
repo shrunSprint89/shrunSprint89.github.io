@@ -11,37 +11,41 @@ const GithubPage = ({ repos, user }) => {
 
   return (
     <>
-      <div className={styles.user}>
-        <div>
-          <Image
-            src={user.avatar_url}
-            className={styles.avatar}
-            alt={user.login}
-            width={50}
-            height={50}
-          />
-          <h3 className={styles.username}>{user.login}</h3>
+      {user && (
+        <div className={styles.user}>
+          <div>
+            <Image
+              src={user.avatar_url}
+              className={styles.avatar}
+              alt={user.login}
+              width={50}
+              height={50}
+            />
+            <h3 className={styles.username}>{user.login}</h3>
+          </div>
+          <div>
+            <h3>{user.public_repos} repos</h3>
+          </div>
+          <div>
+            <h3>{user.followers} followers</h3>
+          </div>
         </div>
-        <div>
-          <h3>{user.public_repos} repos</h3>
-        </div>
-        <div>
-          <h3>{user.followers} followers</h3>
-        </div>
-      </div>
+      )}
       <div className={styles.container}>
-        {repos
-          .sort((repo1, repo2) => {
-            if (new Date(repo1.pushed_at) > new Date(repo2.pushed_at)) {
-              return -1;
-            } else if (new Date(repo1.pushed_at) < new Date(repo2.pushed_at)) {
-              return 1;
-            }
-            return 0;
-          })
-          .map((repo) => (
-            <RepoCard key={repo.id} repo={repo} />
-          ))}
+        {repos &&
+          repos.length &&
+          repos
+            .sort((repo1, repo2) => {
+              if (new Date(repo1.pushed_at) > new Date(repo2.pushed_at)) {
+                return -1;
+              } else if (
+                new Date(repo1.pushed_at) < new Date(repo2.pushed_at)
+              ) {
+                return 1;
+              }
+              return 0;
+            })
+            .map((repo) => <RepoCard key={repo.id} repo={repo} />)}
       </div>
       <div className={styles.contributions}>
         <GitHubCalendar
@@ -75,13 +79,12 @@ export async function getStaticProps() {
     }
   );
   let repos = await repoRes.json();
-  repos = repos
-    .sort((a, b) => b.stargazers_count - a.stargazers_count)
-    .slice(0, 6);
+  repos = repos.length
+    ? repos.sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 6)
+    : [];
 
   return {
     props: { title: "GitHub", repos, user },
-    revalidate: 10,
   };
 }
 

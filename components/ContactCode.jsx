@@ -18,8 +18,8 @@ const contactItems = [
   },
   {
     social: "x/twitter",
-    link: "shrunSprint89",
-    href: "https://www.x.com/shrunSprint89",
+    link: "shrunSpeak",
+    href: "https://www.x.com/shrunSpeak",
   },
   {
     social: "instagram",

@@ -1,9 +1,9 @@
 import ProjectCard from "../components/ProjectCard";
-import { getProjects } from "./api/projects";
 import styles from "../styles/ProjectsPage.module.css";
 import useTranslation from "next-translate/useTranslation";
+import projectsJson from "../data/projects.json";
 
-const ProjectsPage = ({ projects }) => {
+const ProjectsPage = () => {
   const { t } = useTranslation();
   const { descriptionLabel, demoLabel, sourceCodeLabel, listOfProjects } = t(
     "projects:.",
@@ -12,7 +12,7 @@ const ProjectsPage = ({ projects }) => {
       returnObjects: true,
     }
   );
-  projects = projects.map((project, i) => ({
+  const projects = projectsJson.map((project, i) => ({
     ...project,
     ...listOfProjects[i],
   }));
@@ -34,10 +34,8 @@ const ProjectsPage = ({ projects }) => {
 };
 
 export async function getStaticProps() {
-  const projects = getProjects();
-
   return {
-    props: { title: "Projects", projects },
+    props: { title: "Projects" },
   };
 }
 

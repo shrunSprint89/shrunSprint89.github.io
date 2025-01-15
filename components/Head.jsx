@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "next/head";
 
 const CustomHead = ({ title }) => {
   return (
@@ -6,19 +6,19 @@ const CustomHead = ({ title }) => {
       <title>{title}</title>
       <meta
         name="description"
-        content="Nitin Ranganath is an avid full stack web developer building websites and applications you'd love to use"
+        content="Sharan Selvaraj is a versatile full stack engineer specializing in frontend engineering. My technical portfolio spans end-to-end application development, integrating modern frontend technologies with Java or Node based backend frameworks and exploring emerging AI technologies"
       />
       <meta
         name="keywords"
-        content="nitin ranganath, nitin, ranganath, web developer portfolio, nitin web developer, nitin developer, mern stack, nitin ranganath portfolio, vscode-portfolio"
+        content="sharan, sharan selvaraj, software engineer, web developer, portfolio, angular, mean stack, react, mern stack, nextjs, java, python, vscode-portfolio"
       />
-      <meta property="og:title" content="Nitin Ranganath's Portfolio" />
+      <meta property="og:title" content="Sharan Selvaraj's Portfolio" />
       <meta
         property="og:description"
-        content="A full-stack developer building websites that you'd like to use."
+        content="A full-stack developer building applications that stand out"
       />
-      <meta property="og:image" content="https://imgur.com/4zi5KkQ.png" />
-      <meta property="og:url" content="https://vscode-portfolio.vercel.app" />
+      <meta property="og:image" content="" />
+      <meta property="og:url" content="https://shrunsprint89.github.io" />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
   );
@@ -27,5 +27,5 @@ const CustomHead = ({ title }) => {
 export default CustomHead;
 
 CustomHead.defaultProps = {
-  title: 'Nitin Ranganath',
+  title: "Sharan Selvaraj",
 };

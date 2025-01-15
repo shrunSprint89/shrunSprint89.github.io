@@ -15,11 +15,13 @@ const ArticlesPage = ({ articles }) => {
           dev.to
         </a>
       </h3>
-      <div className={styles.container}>
-        {articles.map((article) => (
-          <ArticleCard key={article.id} article={article} />
-        ))}
-      </div>
+      {articles && articles.length > 0 && (
+        <div className={styles.container}>
+          {articles.map((article) => (
+            <ArticleCard key={article.id} article={article} />
+          ))}
+        </div>
+      )}
     </>
   );
 };
@@ -38,7 +40,6 @@ export async function getStaticProps() {
 
   return {
     props: { title: "Articles", articles: data },
-    revalidate: 60,
   };
 }
 

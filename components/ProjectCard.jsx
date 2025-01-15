@@ -2,7 +2,6 @@ import Image from "next/image";
 import styles from "../styles/ProjectCard.module.css";
 
 const ProjectCard = ({ project, demoLabel, sourceCodeLabel }) => {
-  console.log(JSON.stringify(project));
   return (
     <div className={styles.card}>
       {project.image && (
@@ -38,14 +37,16 @@ const ProjectCard = ({ project, demoLabel, sourceCodeLabel }) => {
               {sourceCodeLabel}
             </a>
           )}
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.underline}
-          >
-            {demoLabel}
-          </a>
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.underline}
+            >
+              {demoLabel}
+            </a>
+          )}
         </div>
       </div>
     </div>

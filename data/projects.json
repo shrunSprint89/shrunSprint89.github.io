@@ -2,21 +2,21 @@
   {
     "id": 1,
     "name": "PartnerHub",
-    "image": "logos/Cisco_Webex_logo.svg",
+    "image": "/logos/Cisco_Webex_logo.svg",
     "tags": ["angular", "monorepo", "microfrontend"],
     "demo": "https://admin.webex.com/"
   },
   {
     "id": 2,
     "name": "ControlHub",
-    "image": "logos/Cisco_Webex_logo.svg",
+    "image": "/logos/Cisco_Webex_logo.svg",
     "tags": ["angular", "monorepo", "microfrontend"],
     "demo": "https://admin.webex.com/"
   },
   {
     "id": 3,
     "name": "RialtoStack",
-    "image": "logos/Cisco_Webex_logo.svg",
+    "image": "/logos/Cisco_Webex_logo.svg",
     "tags": [
       "angular",
       "angularmaterial",
@@ -26,7 +26,6 @@
       "java",
       "microservice"
     ],
-    "source_code": "NA",
     "demo": "https://settings.webex.com/"
   },
   {
@@ -34,24 +33,21 @@
     "name": "WxDocubot",
     "image": "/logos/WxDocubot.png",
     "tags": ["webex", "chatbot", "llm", "machine-learning", "nodejs"],
-    "source_code": "https://github.com/shrunSprint89/WxDocubot",
-    "demo": "NA"
+    "source_code": "https://github.com/shrunSprint89/WxDocubot"
   },
   {
     "id": 4,
     "name": "IntellectCBX",
     "image": "/logos/IGtbLogo.jpg",
     "tags": ["java", "j2ee", "extjs", "javascript", "oracle"],
-    "source_code": "NA",
-    "demo": "https://admin.webex.com/"
+    "demo": "https://www.intellectdesign.com/corporate-banking/contextual-banking-experience/"
   },
   {
     "id": 5,
     "name": "JPMCPortal",
     "image": "/logos/JpMorgan.png",
     "tags": ["java", "j2ee", "extjs", "javascript", "oracle"],
-    "source_code": "NA",
-    "demo": "https://admin.webex.com/"
+    "demo": "https://www.jpmorgan.com/payments/client-resource-center/channels/accessexperience"
   },
   {
     "id": 6,
@@ -63,8 +59,6 @@
       "chord",
       "peer-to-peer",
       "distributed-systems"
-    ],
-    "source_code": "NA",
-    "demo": "https://admin.webex.com/"
+    ]
   }
 ]
